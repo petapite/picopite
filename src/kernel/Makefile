@@ -3,13 +3,19 @@ TARGET_CFLAGS += -ffreestanding -nostdlib -I.
 TARGET_LIBS += -lgcc
 TARGET_LINKFLAGS += -T linker.ld -nostdlib
 
-SOURCES_C 	= $(shell find . -type f -name "*.c") \
-				arch/i686/isrs_gen.c
-HEADERS_C 	= $(shell find . -type f -name "*.h")
-OBJECTS_C 	= $(patsubst %.c, $(BUILD_DIR)/kernel/c/%.obj, $(SOURCES_C))
-SOURCES_ASM = $(shell find . -type f -name "*.asm")
+HEADERS_C = $(shell find . -type f -name "*.h")
+
+SOURCES_C = $(shell find . -type f -name "*.c") \
+			arch/i686/isrs_gen.c
+
+OBJECTS_C = $(patsubst %.c, $(BUILD_DIR)/kernel/c/%.obj, $(SOURCES_C))
+
 HEADERS_ASM = $(shell find . -type f -name "*.inc") \
-				arch/i686/isrs_gen.inc
+			  arch/i686/isrs_gen.inc
+
+SOURCES_ASM = $(shell find . -type f -name "*.asm")
+
+
 OBJECTS_ASM = $(patsubst %.asm, $(BUILD_DIR)/kernel/asm/%.obj, $(SOURCES_ASM))
 
 .PHONY: all kernel clean always
@@ -33,9 +39,9 @@ $(BUILD_DIR)/kernel/asm/%.obj: %.asm $(HEADERS_ASM)
 	@echo "--> Compiled: " $<
 
 arch/i686/isrs_gen.c arch/i686/isrs_gen.inc:
-	@rm -rf src/kernel/arch/i686/isrs_gen.c~ src/kernel/arch/i686/isrs_gen.inc~
 	@chmod +x $(SOURCE_DIR)/build_scripts/generate_isrs.sh
 	@$(SOURCE_DIR)/build_scripts/generate_isrs.sh arch/i686/isrs_gen.c arch/i686/isrs_gen.inc
+	@echo "--> Generated ISRs"
 
 clean:
 	rm -f $(BUILD_DIR)/kernel.bin
