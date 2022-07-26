@@ -1,4 +1,6 @@
-[![picopite](https://raw.githubusercontent.com/petapite/picopite/main/res/banner.png)](https://github.com/petapite/picopite)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/petapite/picopite/main/res/banner.png" alt="Picopite"/>
+</p>
 
 ## Building
 First, install the following dependencies:
