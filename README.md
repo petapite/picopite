@@ -1,5 +1,4 @@
-## Picopite
-Welcome to Picopite's repo!
+[![picopite](https://raw.githubusercontent.com/petapyte/picopite/main/res/banner.png)](https://github.com/petapite/picopite)
 
 ## Building
 First, install the following dependencies:
