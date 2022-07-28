@@ -2,6 +2,9 @@
   <a href="https://github.com/petapite/picopite/">
     <img src="https://raw.githubusercontent.com/petapite/picopite/main/res/banner.png" alt="Picopite"/>
   </a>
+</p>
+
+<p align="center">
   <a href="https://github.com/petapite/picopite/commits/main"><img src="https://img.shields.io/github/last-commit/petapite/picopite/main?label=Last%20commit%20was%20pushed" /></a> <a href="https://github.com/petapite/picopite/issues"><img src="https://img.shields.io/github/issues/petapite/picopite?label=Issues" /></a> <a href="https://github.com/petapite/picopite/blob/main/LICENSE"><img src="https://img.shields.io/github/license/petapite/picopite?label=License" /></a>
 </p>
 
